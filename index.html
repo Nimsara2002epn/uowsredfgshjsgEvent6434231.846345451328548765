@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="I love you sooooo much - A romantic tribute dedicated to my favorite girl." />
+  <meta name="author" content="Created with Love" />
+  
+  <title>For My Favorite Girl ❤️</title>
+  
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ===================================================================== -->
+  <!-- Cute Gatekeeper / Login Screen: "Who are you? ✨"                      -->
+  <!-- ===================================================================== -->
+  <div id="cute-login-gate" class="cute-login-gate-overlay" role="dialog" aria-modal="true" aria-labelledby="cute-login-title">
+    <div class="cute-login-backdrop"></div>
+    <div class="cute-login-floating-hearts" aria-hidden="true">
+      <span class="gate-heart gh-1">💖</span>
+      <span class="gate-heart gh-2">✨</span>
+      <span class="gate-heart gh-3">🌸</span>
+      <span class="gate-heart gh-4">💕</span>
+      <span class="gate-heart gh-5">🧸</span>
+      <span class="gate-heart gh-6">🍓</span>
+    </div>
+
+    <div class="cute-login-card">
+      <!-- Header with "Who are you?" GIF -->
+      <div class="login-header-section">
+        <div class="login-gif-halo">
+          <img 
+            src="https://media1.tenor.com/m/Eazcnx5O-bgAAAAC/dudu-dudu-cute.gif" 
+            alt="Who are you?" 
+            class="login-header-gif" 
+            loading="eager"
+            onerror="this.src='https://media.tenor.com/Eazcnx5O-bgAAAAM/dudu-dudu-cute.gif'"
+          />
+        </div>
+        <div class="login-pill-badge">
+          <span>🔒 Secret Access Gate</span>
+        </div>
+        <h1 id="cute-login-title" class="cute-login-title">Who are you? ✨</h1>
+      </div>
+
+      <!-- 4 Name Cards Grid -->
+      <div class="login-cards-grid" role="group" aria-label="Choose your identity">
+        <!-- Card 1: Suduuu -->
+        <button type="button" class="login-name-card" data-name="Suduuu" aria-label="Select Suduuu">
+          <div class="card-gif-wrap">
+            <img 
+              src="https://media1.tenor.com/m/DSPmi9MwrbcAAAAC/screen-bubu.gif" 
+              alt="Suduuu" 
+              class="card-name-gif" 
+              loading="eager"
+              onerror="this.src='https://media.tenor.com/DSPmi9MwrbcAAAAM/screen-bubu.gif'"
+            />
+            <span class="card-tap-glow"></span>
+          </div>
+          <div class="card-label-badge">
+            <span class="card-name-text">Suduuu</span>
+            <span class="card-name-emoji">💖</span>
+          </div>
+        </button>
+
+        <!-- Card 2: Sedani -->
+        <button type="button" class="login-name-card" data-name="Sedani" aria-label="Select Sedani">
+          <div class="card-gif-wrap">
+            <img 
+              src="https://media1.tenor.com/m/L9Bw-WGQMY4AAAAC/bubu-dudu-sseeyall.gif" 
+              alt="Sedani" 
+              class="card-name-gif" 
+              loading="eager"
+              onerror="this.src='https://media.tenor.com/L9Bw-WGQMY4AAAAM/bubu-dudu-sseeyall.gif'"
+            />
+            <span class="card-tap-glow"></span>
+          </div>
+          <div class="card-label-badge">
+            <span class="card-name-text">Sedani</span>
+            <span class="card-name-emoji">🌸</span>
+          </div>
+        </button>
+
+        <!-- Card 3: Umma kate -->
+        <button type="button" class="login-name-card" data-name="Umma kate" aria-label="Select Umma kate">
+          <div class="card-gif-wrap">
+            <img 
+              src="https://media1.tenor.com/m/Qj40AdvEqKsAAAAC/bubu-happy.gif" 
+              alt="Umma kate" 
+              class="card-name-gif" 
+              loading="eager"
+              onerror="this.src='https://media.tenor.com/Qj40AdvEqKsAAAAj/bubu-happy.gif'"
+            />
+            <span class="card-tap-glow"></span>
+          </div>
+          <div class="card-label-badge">
+            <span class="card-name-text">Umma kate</span>
+            <span class="card-name-emoji">🍓</span>
+          </div>
+        </button>
+
+        <!-- Card 4: Love -->
+        <button type="button" class="login-name-card" data-name="Love" aria-label="Select Love">
+          <div class="card-gif-wrap">
+            <img 
+              src="https://media1.tenor.com/m/wtYWWtrJDcgAAAAC/bubu.gif" 
+              alt="Love" 
+              class="card-name-gif" 
+              loading="eager"
+              onerror="this.src='https://media.tenor.com/wtYWWtrJDcgAAAAM/bubu.gif'"
+            />
+            <span class="card-tap-glow"></span>
+          </div>
+          <div class="card-label-badge">
+            <span class="card-name-text">Love</span>
+            <span class="card-name-emoji">🧸</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ambient Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+  <div class="ambient-glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow-2" aria-hidden="true"></div>
+
+  <!-- Top Floating Navigation -->
+  <header class="top-nav" id="main-header">
+    <div class="brand-title" id="nav-brand">
+      <span class="heart-icon">❤️</span>
+      <span>For My Favorite Girl</span>
+    </div>
+
+    <div class="nav-actions">
+      <!-- Romantic Song Audio Toggle -->
+      <button class="btn-icon" id="btn-music-toggle" title="Play / Pause Song">
+        <span class="music-icon">🎵</span>
+        <span class="text">Play Music ♪</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- Main Romantic Experience: Supernova Beating Heart + Synchronized Video & Bubu Card -->
+    <div class="page-view" id="page-2">
+      <div class="page-2-wrapper">
+        <!-- Two-Column Hero Row: Supernova Heart Showcase (Left) + Live Synchronized Lyrics Card (Right) -->
+        <div class="page-2-hero-row">
+          <!-- Supernova Radiant Heart Showcase (Left) -->
+          <div class="viral-heart-showcase" id="viral-heart-showcase">
+            <div class="viral-heart-canvas-container">
+              <canvas id="viral-heart-canvas" width="680" height="560"></canvas>
+            </div>
+            <p class="viral-heart-caption">"My heart beats in time with yours, forever and always."</p>
+          </div>
+
+          <!-- Synchronized Lyric Video Card (Right) -->
+          <div class="lyrics-side-card lyrics-video-card" id="lyrics-side-card">
+            <!-- Lyric Video Container (Direct Video with Sound) -->
+            <div class="lyrics-video-container" id="lyrics-video-container" title="Click to play / pause video">
+              <video 
+                id="lyrics-video" 
+                class="lyrics-video-element" 
+                playsinline 
+                webkit-playsinline
+                preload="auto"
+              >
+                <source src="Vehicle.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div class="lyrics-video-overlay" id="lyrics-video-overlay">
+                <div class="video-overlay-play-btn" id="video-overlay-play-btn">
+                  <span id="video-overlay-play-icon">▶</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Audio Scrubber & Controls -->
+            <div class="lyrics-mini-player">
+              <button class="lyrics-mini-play-btn" id="lyrics-mini-play-btn" title="Play / Pause Song">
+                <span id="lyrics-mini-play-icon">▶</span>
+              </button>
+              <div class="lyrics-scrubber-track" id="lyrics-scrubber-track" role="slider" aria-label="Song progress">
+                <div class="lyrics-scrubber-fill" id="lyrics-scrubber-fill"></div>
+                <div class="lyrics-scrubber-thumb" id="lyrics-scrubber-thumb"></div>
+              </div>
+              <span class="lyrics-time-display" id="lyrics-time-display">00:00 / 02:30</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Area 2: Bubu & Dudu Love Showcase (Centered Below) -->
+        <div class="bubu-showcase-row">
+          <div class="bubu-card">
+            <div class="bubu-img-frame">
+              <img 
+                src="images/bubu-dudu-hug.gif" 
+                onerror="this.src='https://media1.tenor.com/m/3WxG2VePWSUAAAAC/bubududu-panda.gif'" 
+                alt="Bubu and Dudu Hugging" 
+                class="bubu-gif" 
+              />
+              <span class="bubu-floating-emoji emoji-1">💖</span>
+              <span class="bubu-floating-emoji emoji-2">🌸</span>
+              <span class="bubu-floating-emoji emoji-3">✨</span>
+            </div>
+
+            <h1 class="bubu-love-title">
+              I love you sooooo much
+              <span class="title-heart-glow">❤️</span>
+            </h1>
+
+            <p class="bubu-love-subtitle">
+              You are my favorite person, my favorite smile, and my whole universe.
+            </p>
+
+            <!-- Romantic Kiss Me Button -->
+            <button type="button" class="kiss-prompt-btn" id="kiss-prompt-btn" aria-label="Wanna kiss me?">
+              <span class="kiss-btn-sparkle">✨</span>
+              <span class="kiss-btn-text">Wanna kiss me? 😚 Just press your චූටි ඇගිල්ල here 👉🏻💋</span>
+              <span class="kiss-btn-sparkle">✨</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Full-Window Cat Kiss GIF Modal -->
+  <div id="kiss-modal-overlay" class="kiss-modal-overlay" aria-hidden="true">
+    <div class="kiss-modal-backdrop"></div>
+    <div class="kiss-modal-content">
+      <div class="kiss-gif-wrapper">
+        <img 
+          id="kiss-gif-img" 
+          src="https://media1.tenor.com/m/M-7BezSv0-gAAAAC/cat-kiss.gif" 
+          alt="Cat Kiss" 
+          class="kiss-modal-gif" 
+          loading="eager"
+        />
+        <div class="kiss-floating-hearts" id="kiss-floating-hearts"></div>
+      </div>
+      <p class="kiss-modal-caption">Mwaaah! 😘💋</p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer id="main-footer">
+    <div class="container">
+      <p>Made with all my heart <span class="footer-heart">❤️</span> for the one who has it.</p>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Engine -->
+  <script src="script.js"></script>
+</body>
+</html>
